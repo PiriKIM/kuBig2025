@@ -101,3 +101,22 @@ sudo apt install ./code_1.97.2-1739406807_amd64.deb
 
 
 
+---
+## 2025-03-06
+---
+#if문, for문, while문, switch문, goto문
+- 흐름 제어, 반복, 체크, 분기
+- if 조건문 -> int 0 : false, 그 외 1,2,-1,-2,... : true
+
+#식별자 쓸 때
+- C, C++은 Camel Case 사용. ex) leafYear
+- 상수는 Upper Case 사용. ex) #define YEAR
+- 내장 타입은 소문자 ex) int, float...
+- 사용자 타입, 구조체 같은거 ex) MyData
+
+#atoi : string을 int로 바꾸는 함수
+
+
+
+
+
