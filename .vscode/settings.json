@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "time.h": "c",
+        "random.h": "c",
+        "mystring.h": "c"
     }
 }
