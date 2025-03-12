@@ -209,6 +209,59 @@ typedef struct { } 구조체타입명;
 
 
 
+---
+## 2025-03-12
+---
+#구조화
+-분할컴파일
+>>헤더 : 전역변수, 구조체, 함수선언+주석
+>>오브젝트 : 전역변수, 함수정의, 소스 공개 여부(코드 안전)
+
+#string.h
+-strlen, strcpy, strcmp, strcat, ....
+-C함수 길다. >> 헤더를 대표하는 문구가 함수 이름 앞에 붙음.
+
+#문자열
+-char * = "상수" >> 데이터 영역 (0x55xxxxxx)
+-char[] = "blah.." >> 스택 영역, 힙 영영 (0x7xxxxxx)
+
+#외부 라이브러리 사용 연습
+-sql 라이브러리로 연습
+-어떤 검색 >> 어떻게 사용?
+-설치 >> 시스템 폴더 루트 (/usr/lib/include/...)
+-*.h, *.o, *.so (정적링크), *.a (동적링크)
+-동적링크 우선 (*.dll)
+
+#데이터베이스
+-관계형 데이터베이스
+>>클라우드 : AWS, googleDB, gcp,...
+>>로컬 : MySQL, sqlite
+-소켓프로그램으로 운용
+>>TCP, IP, Port, ID, PW,...
+
+-sudo apt install mysql-server
+-dpkg -l | grep mysql
+-sudo mysql_secure_installation
+-sudo systemctl status mysql
+-sudo mysql -u root -p
+>>패스워드 입력하면 접속
+-use mysql; >> 사용할 DB 선택
+-alter user root@localhost identified with 'mysql_native_password' by '0000'; >> 패스워드 변경
+-create user myuser@'%' identified with mysql_native_password by '1017'; >> @ 뒤에 '%'을 붙이면 어느 IP에서든 접속 가능한 유저.
+exit; >> mysql 종료.
+
+#include <mysql.h>
+-sudo apt install libmysql++**
+-dpkg -L libmysqlclient-dev | grep mysql.h
+-cc -o bookSql bookSql.c -I/usr/include/mysql -L/usr/lib/mysql -lmysqlclient >> 외부 라이브러리 사용할 때 컴파일 코드
+
+#CMake
+-sudo apt install cmake
+-sudo apt-get install -y build-essential
+
+
+
+
 
 
 
