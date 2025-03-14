@@ -1,4 +1,4 @@
-TARGET = helloStr charPointerOperation strcatExample filePointer fileDescriptor
+TARGET = helloStr charPointerOperation strcatExample filePointer fileDescriptor dynamicAllocation charAddress unionExample enumExample
 
 all : ${TARGET}
 
@@ -7,6 +7,10 @@ charPointerOperation : $@
 strcatExample : $@
 filePointer : $@
 fileDescriptor : $@
+dynamicAllocation : $@
+charAddress : $@
+unionExample : $@
+enumExample : $@
 
 clean :
 	rm ${TARGET}

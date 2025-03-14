@@ -6,5 +6,4 @@
         "mystring.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
-    "cmake.sourceDirectory": "/home/piri/kuBig2025/sqlQuery"
 }

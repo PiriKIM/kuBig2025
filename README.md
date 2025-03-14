@@ -239,25 +239,57 @@ typedef struct { } 구조체타입명;
 -소켓프로그램으로 운용
 >>TCP, IP, Port, ID, PW,...
 
--sudo apt install mysql-server
--dpkg -l | grep mysql
--sudo mysql_secure_installation
--sudo systemctl status mysql
--sudo mysql -u root -p
+>>sudo apt install mysql-server
+>>dpkg -l | grep mysql
+>>sudo mysql_secure_installation
+>>sudo systemctl status mysql
+>>sudo mysql -u root -p
 >>패스워드 입력하면 접속
--use mysql; >> 사용할 DB 선택
--alter user root@localhost identified with 'mysql_native_password' by '0000'; >> 패스워드 변경
--create user myuser@'%' identified with mysql_native_password by '1017'; >> @ 뒤에 '%'을 붙이면 어느 IP에서든 접속 가능한 유저.
+>>use mysql; >> 사용할 DB 선택
+>>alter user root@localhost identified with 'mysql_native_password' by '0000'; >> 패스워드 변경
+>>create user myuser@'%' identified with mysql_native_password by '1017'; >> @ 뒤에 '%'을 붙이면 어느 IP에서든 접속 가능한 유저.
 exit; >> mysql 종료.
 
 #include <mysql.h>
--sudo apt install libmysql++**
--dpkg -L libmysqlclient-dev | grep mysql.h
--cc -o bookSql bookSql.c -I/usr/include/mysql -L/usr/lib/mysql -lmysqlclient >> 외부 라이브러리 사용할 때 컴파일 코드
+>>sudo apt install libmysql++**
+>>dpkg -L libmysqlclient-dev | grep mysql.h
+>>cc -o bookSql bookSql.c -I/usr/include/mysql -L/usr/lib/mysql -lmysqlclient
+>>외부 라이브러리 사용할 때 컴파일 코드
 
 #CMake
--sudo apt install cmake
--sudo apt-get install -y build-essential
+>>sudo apt install cmake
+>>sudo apt-get install -y build-essential
+>>makefile 생성 도구
+>>부가기능 : 디버깅, deb배포 (CPACK), install,....
+
+
+
+
+
+---
+## 2025-03-13
+---
+#할당
+-메모리에 저장 장소 확보
+
+#정적할당
+-프로그램 코드 시작 시 할당
+-컴파일 시에 확정
+
+#동적할당
+-런타임(프로그램  동작 중간) 중에 할당
+-힙 메모리 공간에 할당
+-malloc() >> 바로 할당. 빠름.
+-free() >> 할당 해제.
+-calloc() >> 0으로 초기화 후 할당.
+-realloc() >> 저장 공간 크기 조절.
+-memset >> 메모리 초기화 함수.
+-힙메모리 사용 후에 반드리 free를 해라!
+-아레나 구조.
+
+
+
+
 
 
 
