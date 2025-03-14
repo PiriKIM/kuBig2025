@@ -1,85 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <mysql.h>
-// sudo apt install libmysql++**
-// dpkg -L libmysqlclient-dev | grep mysql.h
-// cc -o bookSql bookSql.c -I/usr/include/mysql -L/usr/lib/mysql -lmysqlclient
-// libmysqlclient.so    libmysqlclient.a
-
-typedef struct{
-    int bookid;
-    char bookname[40];
-    char publisher[40];
-    int price;
-} Book;
-
-enum menu
-{
-    SELECT,
-    INSERT,
-    DROP,
-    ALTER,
-    QUERY
-};
-
-void fetch_books(MYSQL *conn);
-void add_books(MYSQL *conn);
-void delete_books(MYSQL *conn);
-void update_books(MYSQL *conn);
-void query_books(MYSQL *conn);
-void print_menu(void);
-
-int main(void)
-{
-    MYSQL *conn;
-    char *host = "localhost";
-    char *user = "myuser";
-    char *pass = "1017";
-    char *db = "mydb";
-    int port = 3306;
-    int choice;
-    
-    //DB 연결
-    conn = mysql_init(NULL);
-    if(mysql_real_connect(conn, host, user, pass, db, port, NULL, 0))
-    printf("MySQL 연결 성공\n");
-    else
-    {
-        printf("MySQL 연결 실패\n");
-        return 1;
-    }
-    
-    while(true)
-    {
-        // printf("1, 2 번 중에 고르세요. ");
-        print_menu();
-        scanf("%d", &choice);
-        switch (choice)
-        {
-        case SELECT:
-            fetch_books(conn);
-            break;
-        case INSERT:
-            add_books(conn);
-            break;
-        case DROP:
-            delete_books(conn);
-            break;
-        case ALTER:
-            update_books(conn);
-            break;
-        case QUERY:
-            query_books(conn);
-            break;
-        default:
-            break;
-        }
-    }
-
-    mysql_close(conn);
-    
-    return 0;
-}
+#include "bookSql.h"
 
 void print_menu(void)
 {
@@ -90,6 +9,7 @@ void print_menu(void)
     printf("2. 도서 삭제\n");
     printf("3. 도서 수정\n");
     printf("4. 쿼리문 입력\n");
+    printf("5. 프로그램 종료\n");
 }
 
 void fetch_books(MYSQL *conn)
@@ -346,10 +266,15 @@ void query_books(MYSQL *conn)
     MYSQL_RES *res;
     MYSQL_ROW row;
     char query[255];
+    char tempQuery[255];
     char temp;
 
     printf("실행할 쿼리문을 입력하세요.\n");
-    scanf("%s", query);
+    getchar();
+    scanf("%[^\n]s", query);
+
+    strcpy(tempQuery, query);
+
     //쿼리 요청
     if(mysql_query(conn, query))
     {
@@ -377,32 +302,14 @@ void query_books(MYSQL *conn)
     }
     else
     {
-        Book *pBook;
-        pBook = (Book *)malloc(sizeof(Book));
-        int i = 0;
-        // 데이터베이스의 정보를 구조체에 저장 - ORM
         while (row = mysql_fetch_row(res))
         {
-            for(int j = 0; j < res->field_count; j++)
+            for(int i = 0; i < res->field_count; i++)
             {
-                (pBook + i)->bookid = atoi(row[j]);
-                strcpy((pBook + i)->bookname, row[j]);
-                strcpy((pBook + i)->publisher, row[j]);
-                (pBook + i)->price = atoi(row[j]);
-                ++i;
-                pBook = realloc(pBook, sizeof(Book) * (i + 1));
-                // row가 늘어날때마다 동적 할당 크기 조절
-            }            
+                printf("%s\t", row[i]);
+            }
+            printf("\n");
         }
-
-        for (int j = 0; j < i; j++)
-        {
-            printf("%d\t%s\t%s\t%d\n",
-                   (pBook + j)->bookid, (pBook + j)->bookname,
-                   (pBook + j)->publisher, (pBook + j)->price);
-        }
-
-        free(pBook);
     }
 
     // TODO : 여기 엔터만 쳐도 넘어가게 변경
