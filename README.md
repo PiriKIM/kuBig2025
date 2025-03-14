@@ -291,10 +291,34 @@ exit; >> mysql 종료.
 
 
 
+---
+## 2025-03-13
+---
+# 표준 파일 입출력
+- 0 : stdin >> 버퍼o
+- 1 : stdout >> 버퍼o
+- 2 : stderr >> 버퍼x
+
+- 입력 버퍼 >> 큐(que) 버퍼 FIFO
+- read() >> 버퍼데이터가 없으면 블로킹, 있으면 읽어서 리턴.
+- get(), getc(), fgetc(), gets(), fgets(), scanf() -> read() 호출.
+- fgetc(), fgets() 사용을 추천.
+
+- 출력 버퍼
+- fflush(stdout)으로 처리 가능.
+
+- write() >> 버퍼가 가득 찼을 때 블로킹, 버퍼가 비워지기 전까지
+- printf(), put(), putc(), fputc(), putchar() >> write() 호출.
 
 
-
-
+# 볼링 프로그램 만들기
+- 입력 함수
+- 10개 프레임
+- 점수판 만들기
+- 사용자명, 점수, 날짜 (Table1)
+- 사용자명, 날짜별 횟수 (Table2)
+ >> DB Table에 저장
+- 점수는 사용자 입력 or 랜덤
 
 
 
