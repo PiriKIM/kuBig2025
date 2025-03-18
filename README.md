@@ -322,5 +322,29 @@ exit; >> mysql 종료.
 
 
 
+---
+## 2025-03-18
+---
+#임베디드 프로그래밍
+#ATmega128 - 8bit
+
+#USB 포트 인식 설정(임시 수동)
+lsusb
+ls -l /dev/bus/usb/002/008
+sudo chmod 666 /dev/bus/usb/002/008
+
+#ATmega 정보
+  idVendor           0x03eb Atmel Corp.
+  idProduct          0x2104 AVR ISP mkII
+
+#USB 포트 인식 설정(영구 자동)
+sudo nano /etc/udev/rules.d/99-avrisp.rules
+SUBSYSTEM=="usb", ATTR(idVendor)=="03eb", ATTR(idProduct)=="2104", MODE="0666"
+
+
+
+
+
+
 
 
