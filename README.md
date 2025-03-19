@@ -341,9 +341,9 @@ sudo chmod 666 /dev/bus/usb/002/008
 sudo nano /etc/udev/rules.d/99-avrisp.rules
 SUBSYSTEM=="usb", ATTR(idVendor)=="03eb", ATTR(idProduct)=="2104", MODE="0666"
 
-
-
-
+#UART 포트 인식 설정(임시 수동)
+ls -l /dev/ttyUSB0
+sudo chmod 666 /dev/ttyUSB0
 
 
 
