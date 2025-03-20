@@ -340,6 +340,18 @@ sudo chmod 666 /dev/bus/usb/002/008
 #USB 포트 인식 설정(영구 자동)
 sudo nano /etc/udev/rules.d/99-avrisp.rules
 SUBSYSTEM=="usb", ATTR(idVendor)=="03eb", ATTR(idProduct)=="2104", MODE="0666"
+sudo udevadm control --reload
+sudo udevadm trigger
+
+Future Technology Devices International, Ltd FT232 Serial (UART) IC
+
+idVendor : 0x0403 Future Technology Devices International, Ltd
+idProduct : 0x6001 FT232 Serial (UART) IC
+
+Atmel Corp. AVR ISP mkII
+
+idVendor : 0x03eb Atmel Corp.
+idProduct : 0x2104 AVR ISP mkII
 
 #UART 포트 인식 설정(임시 수동)
 ls -l /dev/ttyUSB0
