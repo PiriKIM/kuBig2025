@@ -9,16 +9,16 @@
             "name": "PlatformIO",
             "includePath": [
                 "/home/piri/kuBig2025/src",
-                "/home/piri/kuBig2025/lib/uart0",
                 "/home/piri/kuBig2025/lib/lcd",
+                "/home/piri/kuBig2025/lib/uart0",
                 ""
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
                     "/home/piri/kuBig2025/src",
-                    "/home/piri/kuBig2025/lib/uart0",
                     "/home/piri/kuBig2025/lib/lcd",
+                    "/home/piri/kuBig2025/lib/uart0",
                     ""
                 ]
             },
