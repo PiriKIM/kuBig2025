@@ -10,6 +10,8 @@
             "includePath": [
                 "/home/piri/kuBig2025/src",
                 "/home/piri/kuBig2025/lib/lcd",
+                "/home/piri/kuBig2025/lib/at25",
+                "/home/piri/kuBig2025/lib/sht20",
                 "/home/piri/kuBig2025/lib/uart0",
                 ""
             ],
@@ -18,6 +20,8 @@
                 "path": [
                     "/home/piri/kuBig2025/src",
                     "/home/piri/kuBig2025/lib/lcd",
+                    "/home/piri/kuBig2025/lib/at25",
+                    "/home/piri/kuBig2025/lib/sht20",
                     "/home/piri/kuBig2025/lib/uart0",
                     ""
                 ]

@@ -6,7 +6,8 @@
         "mystring.h": "c",
         "delay.h": "c",
         "io.h": "c",
-        "uart0.h": "c"
+        "uart0.h": "c",
+        "interrupt.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
 }
