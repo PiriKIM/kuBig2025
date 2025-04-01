@@ -360,3 +360,85 @@ sudo chmod 666 /dev/ttyUSB0
 
 
 
+
+---
+## 2025-04-01
+---
+### 라즈베리파이 수업 시작
+
+- 임베디드 atmega128
+main 함수 하나 실행
+복잡한 하드웨어 x
+커다란 시스템 x
+장난감, 게임기, 센서제어 등등
+
+- 그러므로 OS 필요
+여러개의 프로세스 가능
+복잡한 하드웨어 가능
+핸드폰, 로못, 키오스크 등등
+
+- 라즈베리파이(임베디드 + OS)
+임베디드와 OS의 중간 단계
+커널링 - OS의 깊은 설정
+>> 한정된 자원을 최적화
+RTOS - 임베디드에 꼭 필요한것만
+
+### 라즈베리 파이 이미저 다운로드
+설치 후 실행
+기기 - 라즈베리 파이 4
+운영체제 - 라즈베리파이 OS 64bit
+저장소 - SD카드
+커스마이징
+호스트네임, 사용자이름, 비밀번호 설정
+무선랜 turtle, turtlebot3
+국가 - KR, 시간대 - asia/seoul, 키보드 - us
+서비스 - SSH 사용 체크 - 비밀번호 인증
+옵션 - 밑에꺼 두개 체크
+
+### 와이파이 turtle - turtlebot3
+192.168.0.1 접속
+admin - admin 로그인
+관리도구-고급설정-네트워크관리-내부네트워크설정
+vmware 터미널에서 ifconfig 실행
+inet 주소 확인 192.168.232.128
+vmware-player-manage-setting-network adapter
+>> bridged >> configure adapters
+>> 내컴퓨터가 쓰는 와이파이만 체크
+inet 주소 확인 192.168.0.xx 로 바뀜
+vscode실행-open a remote window-ssh눌러서 설치
+터미널에서 ssh piri@192.168.0.61
+내 컴퓨터가 할당받은 ip말고
+vmware가 할당받은 ip 말고
+라즈베리파이가 할당받은 ip!!!!!!!
+
+### 라즈베리파이 설정
+sudo raspi-config
+5.localization - locale - en_US.UTF-8 선택
+3.interface - VNC, SPI, I2C enable 설정
+
+### vnc viewer 다운로드 설치
+vnc Viewer에 라즈베리파이 ip 넣고 접속
+
+### 라즈베리파이에 원격 접속
+vscode실행 - open a remote window - connected to HOST - add new SSH host - piri@192.168.0.54 - /home/piri/.ssh/config 클릭 - connect 클릭 - 새창 뜨면 비밀번호 입력
+
+### 라즈베리파이 로컬에 git 연결
+git clone 으로 가져온거 push 안될때 확인
+git remote -v 로 본인의 레포지토리로 지정 확인
+git config --global user.name "사용자 이름"
+git config --global user.email "이메일 주소"
+
+### WiringPi 라이브러리 git에서 다운로드 그리고 컴파일 방법
+git clone https://github.com/WiringPi/WiringPi.git
+cd WiringPi >> sudo ./build
+cc -o hello helloRaspberry.c -lwiringPi
+
+
+
+
+
+
+
+
+
+
