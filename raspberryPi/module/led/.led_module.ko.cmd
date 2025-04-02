@@ -1,0 +1,1 @@
+savedcmd_/home/piri/kuBig2025/raspberryPi/module/led/led_module.ko := ld -r -EL  -maarch64elf -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T arch/arm64/module.lds -o /home/piri/kuBig2025/raspberryPi/module/led/led_module.ko /home/piri/kuBig2025/raspberryPi/module/led/led_module.o /home/piri/kuBig2025/raspberryPi/module/led/led_module.mod.o;  true

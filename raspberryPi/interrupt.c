@@ -25,8 +25,8 @@ int main(void)
 
     wiringPiISR(SW1, INT_EDGE_RISING, SW_ISR1);
     wiringPiISR(SW2, INT_EDGE_RISING, SW_ISR2);
-    wiringPiISR(SW3, INT_EDGE_RISING, SW_ISR3);
-    wiringPiISR(SW4, INT_EDGE_RISING, SW_ISR4);
+    wiringPiISR(SW3, INT_EDGE_FALLING, SW_ISR3);
+    wiringPiISR(SW4, INT_EDGE_FALLING, SW_ISR4);
     
     while(1)
     {
