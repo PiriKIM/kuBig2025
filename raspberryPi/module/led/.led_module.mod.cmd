@@ -1,1 +1,0 @@
-savedcmd_/home/piri/kuBig2025/raspberryPi/module/led/led_module.mod := printf '%s\n'   led_module.o | awk '!x[$$0]++ { print("/home/piri/kuBig2025/raspberryPi/module/led/"$$0) }' > /home/piri/kuBig2025/raspberryPi/module/led/led_module.mod
