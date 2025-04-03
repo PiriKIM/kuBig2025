@@ -9,7 +9,8 @@
         "uart0.h": "c",
         "interrupt.h": "c",
         "kernel.h": "c",
-        "module.h": "c"
+        "module.h": "c",
+        "*.tcc": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
 }

@@ -471,7 +471,29 @@ sudo chmod 666 /dev/ttyUSB0
 
 
 
+---
+2025-04-03
+---
+### 커널 실행 전 칩 확인
+- cd /sys/class/gpio/
+- echo 23 > export
+- echo 535 > export
+- echo 535 > unexport
 
+### LED 커널 모듈 실행
+- sudo insmod led_module.ko : 실행
+- sudo rmmod led_module : 종료
+- dmesg : printk 메세지 확인
+- sudo dmesg -C : dmesg Clear
+
+### 디바이스 드라이버 실행
+- sudo insmod driver_exam.ko
+- dmesg
+- sudo mknod /dev/driver_exam c 220 0
+>> 파일위치, 장치타입, 주번호, 부번호
+- ls /dev/driver_exam -al
+- sudo chmod 666 /dev/driver_exam
+- ls /dev/ | grep driver : "driver"가 들어간거만 검색
 
 
 
