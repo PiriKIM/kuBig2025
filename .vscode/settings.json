@@ -10,7 +10,9 @@
         "interrupt.h": "c",
         "kernel.h": "c",
         "module.h": "c",
-        "*.tcc": "c"
+        "*.tcc": "c",
+        "compare": "c",
+        "asoundlib.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
 }
