@@ -12,7 +12,8 @@
         "module.h": "c",
         "*.tcc": "c",
         "compare": "c",
-        "asoundlib.h": "c"
+        "asoundlib.h": "c",
+        "stdlib.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
 }

@@ -18,7 +18,7 @@
 #define LED3 25
 #define LED4 1
 // buzzer
-#define BUZZER_PIN 26
+#define BUZZER_PIN 12
 
 int doReMi[8] = {523, 587, 659, 698, 783, 880, 987, 1046};
 void setPWMFrequency(int freq);
@@ -51,15 +51,16 @@ int main(void)
     // MPU 6050 I2C file descriptor
     int gyro_fd = wiringPiI2CSetup(GYRO_ADDR);
     delay(100);
-
+    wiringPiSetup(); // wiring pin 번호
     wiringPiSetupGpio(); // BCM 기준 gpio 핀번호
+    
     int led[4] = {LED1, LED2, LED3, LED4};
 
     for (int i = 0; i < 4; ++i)
     {
         pinMode(led[i], OUTPUT);
     }
-    wiringPiSetup(); // wiring pin 번호
+    
     pinMode(BUZZER_PIN, PWM_OUTPUT);
 
     Gyro_offset offset = init_gyro(gyro_fd);
