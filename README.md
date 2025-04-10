@@ -590,8 +590,30 @@ sudo chmod 666 /dev/ttyUSB0
 
 
 
+---
+2025-04-10
+---
+### 배열(Array) vs 연결리스트(LinkedList)
 
+##### 배열
+- 연속된 메모리 공간 차지 (적은 공간, 효율적)
+- 장점 : index (random access 가능)
+- 단점 : 임의의 위치 삽입/삭제 불편
 
+##### 연결리스트
+- 값+다음리스트주소값, 더 많은 공간 차지
+- 장점 : 임의의 위치 삽입/삭제 용이
+- 단점 : sequential access (순차적으로 접근해야함)
+
+> typedef struct node {
+>     int data;
+>     struct node *next;
+> } Node;
+
+> typedef struct list
+> {
+>     Node *ptr;
+> } List;
 
 
 
