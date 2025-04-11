@@ -605,20 +605,48 @@ sudo chmod 666 /dev/ttyUSB0
 - 장점 : 임의의 위치 삽입/삭제 용이
 - 단점 : sequential access (순차적으로 접근해야함)
 
-> typedef struct node {
->     int data;
->     struct node *next;
-> } Node;
+- -> typedef struct node {
+- ->     int data;
+- ->     struct node *next;
+- -> } Node;
 
-> typedef struct list
-> {
->     Node *ptr;
-> } List;
-
-
+- -> typedef struct list
+- -> {
+- ->     Node *ptr;
+- -> } List;
 
 
 
+
+---
+2025-04-11
+---
+### 함수는 모두 전역함수만 존재, 모든 파일에서 접근 가능
+### static 전역 함수는 같은 .c 파일 안에서만 접근 가능
+
+### C언어와 C++
+- g++ -c stack.cpp
+- g++ -c main.cpp 
+- g++ -o testStack main.o stack.o
+- C언어에서 인자가 없으면 unknown을 의미. void로 명시해줘야함.
+- C++에서는 인자가 없으면 괄호 안을 비워두면 됨.
+- int main(void) --> int main()
+- typedef struct stack { } Stack; --> struct Stack { };
+- 함수 정의 시에 함수명 앞에 구조체명:: (Stack::)을 붙이면 멤버함수가 됨.
+- 멤버함수는 반드시 객체를 통해 호출해야함.
+- 멤버함수는 자기 자신을 호출한 객체를 가르키는 포인터인 this를 가짐.
+- malloc(), free() --> new, delete
+- 생성자와 소멸자는 멤버함수, 안 만들어도 컴파일러가 자동 생성.
+- 객체가 만들어질 때, 생성자 호출, 초기화 작업
+- 객체가 사라질 때, 소멸자 호출, 청소 작업
+- 생성자와 소멸자는 반환 타입이 없음.
+- 접근지정자 (private, public)
+- 내부구현은 숨기고, 인터페이스는 보이게 한다.
+- 허용된 연산을 통해서만 내부 구현에 접근한다.
+- struct --> class : 사용자 정의
+- printf --> std::cout << ;
+- printf("s1 1st pop(): %d\n", s1.pop());
+- std::cout << "s1 1st pop(): " << s1.pop() << std::endl;
 
 
 
