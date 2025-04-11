@@ -647,6 +647,8 @@ sudo chmod 666 /dev/ttyUSB0
 - printf --> std::cout << ;
 - printf("s1 1st pop(): %d\n", s1.pop());
 - std::cout << "s1 1st pop(): " << s1.pop() << std::endl;
+- struct는 기본 접근자가 public
+- class는 기본 접근자가 private
 
 
 
