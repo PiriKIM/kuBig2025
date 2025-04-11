@@ -1,46 +1,66 @@
-//
-// !!! WARNING !!! AUTO-GENERATED FILE!
-// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
-// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
-//
+// //
+// // !!! WARNING !!! AUTO-GENERATED FILE!
+// // PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// // https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+// //
+// {
+//     "configurations": [
+//         {
+//             "name": "PlatformIO",
+//             "includePath": [
+//                 "/home/piri/kuBig2025/src",
+//                 "/home/piri/kuBig2025/lib/at25",
+//                 "/home/piri/kuBig2025/lib/lcd",
+//                 "/home/piri/kuBig2025/lib/sht20",
+//                 "/home/piri/kuBig2025/lib/uart0",
+//                 ""
+//             ],
+//             "browse": {
+//                 "limitSymbolsToIncludedHeaders": true,
+//                 "path": [
+//                     "/home/piri/kuBig2025/src",
+//                     "/home/piri/kuBig2025/lib/at25",
+//                     "/home/piri/kuBig2025/lib/lcd",
+//                     "/home/piri/kuBig2025/lib/sht20",
+//                     "/home/piri/kuBig2025/lib/uart0",
+//                     ""
+//                 ]
+//             },
+//             "defines": [
+//                 "F_CPU=16000000L",
+//                 "PLATFORMIO=60118",
+//                 "ARDUINO_AVR_ATmega128",
+//                 "__AVR_ATmega128__",
+//                 ""
+//             ],
+//             "cStandard": "gnu11",
+//             "cppStandard": "gnu++11",
+//             "compilerPath": "/home/piri/.platformio/packages/toolchain-atmelavr/bin/avr-gcc",
+//             "compilerArgs": [
+//                 "-mmcu=atmega128",
+//                 ""
+//             ]
+//         }
+//     ],
+//     "version": 4
+// }
+
 {
     "configurations": [
-        {
-            "name": "PlatformIO",
-            "includePath": [
-                "/home/piri/kuBig2025/src",
-                "/home/piri/kuBig2025/lib/at25",
-                "/home/piri/kuBig2025/lib/lcd",
-                "/home/piri/kuBig2025/lib/sht20",
-                "/home/piri/kuBig2025/lib/uart0",
-                ""
-            ],
-            "browse": {
-                "limitSymbolsToIncludedHeaders": true,
-                "path": [
-                    "/home/piri/kuBig2025/src",
-                    "/home/piri/kuBig2025/lib/at25",
-                    "/home/piri/kuBig2025/lib/lcd",
-                    "/home/piri/kuBig2025/lib/sht20",
-                    "/home/piri/kuBig2025/lib/uart0",
-                    ""
-                ]
-            },
-            "defines": [
-                "F_CPU=16000000L",
-                "PLATFORMIO=60118",
-                "ARDUINO_AVR_ATmega128",
-                "__AVR_ATmega128__",
-                ""
-            ],
-            "cStandard": "gnu11",
-            "cppStandard": "gnu++11",
-            "compilerPath": "/home/piri/.platformio/packages/toolchain-atmelavr/bin/avr-gcc",
-            "compilerArgs": [
-                "-mmcu=atmega128",
-                ""
-            ]
-        }
+      {
+        "name": "Linux",
+        "includePath": [
+          "${workspaceFolder}/**",
+          "/usr/include/c++/11",
+          "/usr/include/x86_64-linux-gnu/c++/11",
+          "/usr/include"
+        ],
+        "compilerPath": "/usr/bin/g++",
+        "cStandard": "c11",
+        "cppStandard": "c++17",
+        "intelliSenseMode": "linux-gcc-x64"
+      }
     ],
     "version": 4
-}
+  }
+  

@@ -1,6 +1,8 @@
 #ifndef STACK_H
 #define STACK_H
-class Stack{
+
+class Stack
+{
 private:
     int *pArr;
     int size;

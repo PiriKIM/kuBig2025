@@ -24,9 +24,8 @@ void Stack::push(int data)
 {
     // Full???
     assert(this->tos != this->size);
-    // ps->pArr[ps->tos] = data;
-    // ps->tos++;
-    *(this->pArr + this->tos) = data;
+    
+    this->pArr[this->tos] = data;
     this->tos++;
 }
 
@@ -34,8 +33,7 @@ int Stack::pop()
 {
     // Empty???
     assert(this->tos != 0);
-    // ps->tos--;
-    // return ps->pArr[ps->tos];
+
     this->tos--;
-    return *(this->pArr + this->tos);
+    return this->pArr[this->tos];
 }
