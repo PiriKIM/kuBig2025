@@ -652,7 +652,20 @@ sudo chmod 666 /dev/ttyUSB0
 
 
 
-
+---
+2025-04-14
+---
+### reference (alias, 별칭)
+- 선언할 때 반드시 초기화해야함
+- int a = 100;
+- int &r = a;
+- 인자를 전달하는 쪽의 값을 변화시킬 때
+- class를 인자로 전달할 때 오버헤드 줄이려고
+- 함수 중복 시에 기본형, 포인터형, 레퍼런스형은 overloading 불가!!
+- void operator=(const Complex &rc);
+- int operator==(const Complex &rc);
+- 연산자 중복에서는 레퍼런스 사용!!!!!!!
+- C++부터는 bool 타입 사용 가능 (true or false)
 
 
 
