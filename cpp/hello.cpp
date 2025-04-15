@@ -5,9 +5,9 @@ int main()
 {
     std::cout << "hello" << std::endl;
 
-    operator << (std::cout, "hello");
+    operator << (std::cout, "hello") << (std::endl);
 
-    std::cout.operator << ("hello");
+    std::cout.operator << ("hello") << std::endl;
 
     return 0;
 }
