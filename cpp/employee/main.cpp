@@ -9,11 +9,11 @@ void printEmployee(Employee *p)
 
 int main()
 {
-    Employee e1(1, "Park Jung Seok", NULL);
-    Employee e2(2, "Sung Young Ho", &e1);
-    Employee e3(3, "Choi Su Gil", &e1);
-    Employee e4(4, "Cho Min Sung", &e1);
-    Employee e5(5, "Min Byung Hun", &e4);
+    // Employee e1(1, "Park Jung Seok", NULL);
+    // Employee e2(2, "Sung Young Ho", &e1);
+    // Employee e3(3, "Choi Su Gil", &e1);
+    // Employee e4(4, "Cho Min Sung", &e1);
+    // Employee e5(5, "Min Byung Hun", &e4);
 
     // Employee e6 = e1;
     // e2 = e1;

@@ -669,4 +669,30 @@ sudo chmod 666 /dev/ttyUSB0
 
 
 
+---
+2025-04-15
+---
+### dafault argument
+- 인자에 기본값이 있을 때 사용
+- 뒷쪽 인자부터 기본값을 준다
+- java는 함수 중복 가능, default 인자 불가
+- python은 함수 중복 불가, default 인자 가능
+- C++은 함수 중복과 default 인자 둘 다 가능
+- 변수는 parameter, 실제 전달 값은 argument
+
+### 컴파일러에 의해 자동 생성되는 멤버 함수
+- 생성자가 하나도 없으면 default 생성자가 만들어짐
+- 생성자가 하나라도 있으면 default 생성자가 안만들어짐
+- 복사생성자가 없으면 자동으로 복사생성자가 만들어짐
+- 기본생성자, 복사생성자, 소멸자
+- 치환 연산자
+- Empty& operator&() { return this; }
+- const Empty* operator&() const { return this; }
+- 주소연산자, const 주소연산자
+
+
+
+
+
+
 

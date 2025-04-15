@@ -59,7 +59,8 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "cstring": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
 }
