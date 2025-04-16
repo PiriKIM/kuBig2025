@@ -27,5 +27,8 @@ int main()
     std::cout << "s4: " << s4 << ", " << s4.size() << std::endl;
     std::cout << "s5: " << s5 << ", " << s5.size() << std::endl;
 
+    s5 = s5;
+    std::cout << "s5: " << s5 << ", " << s5.size() << std::endl;
+
     return 0;
 }

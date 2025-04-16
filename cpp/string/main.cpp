@@ -26,5 +26,8 @@ int main()
 
     std::cout << "s4: " << s4 << ", " << s4.size() << std::endl;
 
+    s4 = s4;
+    std::cout << "s4: " << s4 << ", " << s4.size() << std::endl;
+
     return 0;
 }
