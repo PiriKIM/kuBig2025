@@ -44,13 +44,15 @@ String::~String()
 
 String& String::operator=(const String& rhs)
 {
-    delete [] str_;
-    str_ = new char[rhs.len_ + 1];
-    assert(str_);
-    strcpy(str_, rhs.str_);
-
-    len_ = rhs.len_;
-
+    if (this != &rhs)
+    {
+        delete [] str_;
+        str_ = new char[rhs.len_ + 1];
+        assert(str_);
+        strcpy(str_, rhs.str_);
+    
+        len_ = rhs.len_;
+    }
     return *this;
 }
 
