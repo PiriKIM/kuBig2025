@@ -47,7 +47,7 @@ void Queue::push(int data)
 int Queue::pop()
 {
     assert(!isEmpty());
-    int tmp = arr_[front_];
+    int i = front_;
     ++front_;
-    return tmp;
+    return arr_[i];
 }
