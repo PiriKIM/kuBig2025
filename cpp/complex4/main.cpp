@@ -36,6 +36,12 @@ int main()
     c7++;
     ++c7;
 
+    const Complex c8(2.0, 3.0);
+    // c8.getReal(4.0);
+
+    Complex c9;
+    c9 = c1 + c2 + c3 + c4 + c5 + c6 + c7 + c8;
+
     std::cout << "c1: " << c1 << std::endl;
     std::cout << "c2: " << c2 << std::endl;
     std::cout << "c3: " << c3 << std::endl;
@@ -43,10 +49,8 @@ int main()
     std::cout << "c5: " << c5 << std::endl;
     std::cout << "c6: " << c6 << std::endl;
     std::cout << "c7: " << c7 << std::endl;
-
-    const Complex c8(2.0, 3.0);
-    // c8.getReal(4.0);
     std::cout << "c8: (" << c8.getReal() << " + " << c8.getImag() << "i)" << std::endl;
+    std::cout << "c9: " << c9 << std::endl;
 
     return 0;
 }
