@@ -739,3 +739,60 @@ sudo chmod 666 /dev/ttyUSB0
 
 
 
+---
+2025-04-18
+---
+### 상속
+- public 상속 : 부모 쪽의 public 멤버가 자식 쪽의 public으로 상속
+> class 자식클래스명 : public 부모클래스명 { };
+- private 상속 : 부모 쪽의 public 멤버가 자식 쪽의 private으로 상속
+> class 자식클래스명 : private 부모클래스명 { };
+
+### protected 멤버
+- 외부에서 봤을 때는 private 멤버
+- 상속받은 자식클래스에서 봤을 때는 public 멤버
+- private으로 유지하되 자식클래스에서 접근할 때 사용
+
+### 다형성 (polymorphism)
+- Array *p = new SafeArray(nums, 5);
+- 부모클래스 타입의 포인터/레퍼런스는 자식 객체를 가리키거나 참조 가능
+- 함수 인자 전달, 리턴 시 사용
+
+### 가상함수 (virtual function)
+- 실행시간에 객체의 타입을 보고 동적 바인딩해서 해당 함수 호출 가능.
+- Array *p = new SafeArray(nums, 5);
+- (*p)[5] = 6; // p->operator[](5) = 6;
+- -> 실행 시간의 객체의 타입이 아닌 포인터의 타입을 보고 실행함.
+- 부모 쪽 함수 앞에 virtual 키워드를 붙여주면 해결 가능.
+- virtual 함수가 존재하면 소멸자도 무조건 virtual이어야 함.
+
+### 함수재정의 (function overriding)
+- int& Array::operator[](int index); -> int& SafeArray::operator[](int index);
+- vs. 함수중복 (function overloading)
+
+### 순수 가상 함수 (pure virtual function)
+- virtual double area() const = 0;
+- 순수가상함수를 가지는 클래스는 추상클래스
+- 추상클래스 타입의 객체는 생성 불가
+- 추상클래스 타입의 포인터, 레퍼런스는 가능
+
+### #include <typeinfo> 상속에서 중요!!!
+- void printShape(const Shape *ps)
+- {
+>> if (typeid(*ps) == typeid(Rectangle)) {
+>>>> const Rectangle *pr = (Rectangle *)ps;
+>>>> std::cout << "rectangle diagonal : " << pr->getDiagonal() << ", ";
+>> } else if (typeid(*ps) == typeid(Circle)) {
+>>>> const Circle *pc = (Circle *)ps;
+>>>> std::cout << "circle circumference : " << pc->getCircumference() << ", ";
+>> }
+>> std::cout << "area : " << ps->area() << std::endl;
+- }
+
+### template code 만들기
+- Array 코드가 임의의 타입에 대해서 잘 동작한다는 가정하에!!!
+- 템플릿 코드는 사용되는 시점에 C++ 코드가 만들어지므로, header 파일에 들어가야 함
+- 템플릿 코드를 구성하는 요소들에 template <typename T>를 모두 붙임
+- Array 내부에 저장되는 type int를 임의의 타임 T로 변경
+- Array 클래스 이름은 Array<T>로 변경 (단, 클래스 이름, 생성자, 소멸자는 그대로 사용)
+
