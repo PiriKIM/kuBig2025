@@ -779,12 +779,16 @@ sudo chmod 666 /dev/ttyUSB0
 ### #include <typeinfo> 상속에서 중요!!!
 - void printShape(const Shape *ps)
 - {
->> if (typeid(*ps) == typeid(Rectangle)) {     
->>>> const Rectangle *pr = (Rectangle *)ps;     
->>>> std::cout << "rectangle diagonal : " << pr->getDiagonal() << ", ";     
->> } else if (typeid(*ps) == typeid(Circle)) {     
+>> if (typeid(*ps) == typeid(Rectangle))     
+>> {      
+>>>> const Rectangle *pr = (Rectangle *)ps;      
+>>>> std::cout << "rectangle diagonal : " << pr->getDiagonal() << ", ";      
+
+>> }      
+>> else if (typeid(*ps) == typeid(Circle)) {      
 >>>> const Circle *pc = (Circle *)ps;     
 >>>> std::cout << "circle circumference : " << pc->getCircumference() << ", ";     
+
 >> }     
 >> std::cout << "area : " << ps->area() << std::endl;     
 - }
@@ -792,8 +796,8 @@ sudo chmod 666 /dev/ttyUSB0
 ### template code 만들기
 - Array 코드가 임의의 타입에 대해서 잘 동작한다는 가정하에!!!
 - 템플릿 코드는 사용되는 시점에 C++ 코드가 만들어지므로, header 파일에 들어가야 함
-- 템플릿 코드를 구성하는 요소들에 template <&lt;>typename T<&gt;>를 모두 붙임
+- 템플릿 코드를 구성하는 요소들에 template &lt;typename T&gt;를 모두 붙임
 - Array 내부에 저장되는 type int를 임의의 타입 T로 변경
-- Array 클래스 이름은 Array<&lt;>T<&gt;>로 변경 (단, 클래스 이름, 생성자, 소멸자는 그대로 사용)
-- 상속받은 부모클래스가 템플릿 코드면 부모클래스 이름과 생성자에는 <&lt;>T<&gt;>를 붙여야야 함
+- Array 클래스 이름은 Array&lt;T&gt;로 변경 (단, 클래스 이름, 생성자, 소멸자는 그대로 사용)
+- 상속받은 부모클래스가 템플릿 코드면 부모클래스 이름과 생성자에는 &lt;T&gt;를 붙여야야 함
 
