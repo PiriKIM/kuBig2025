@@ -761,13 +761,13 @@ sudo chmod 666 /dev/ttyUSB0
 ### 가상함수 (virtual function)
 - 실행시간에 객체의 타입을 보고 동적 바인딩해서 해당 함수 호출 가능.
 - Array *p = new SafeArray(nums, 5);
-- (*p)[5] = 6; // p->operator[](5) = 6;
+- (*p)[5] = 6; // p->operator[ ]\(5\) = 6;
 - -> 실행 시간의 객체의 타입이 아닌 포인터의 타입을 보고 실행함.
 - 부모 쪽 함수 앞에 virtual 키워드를 붙여주면 해결 가능.
 - virtual 함수가 존재하면 소멸자도 무조건 virtual이어야 함.
 
 ### 함수재정의 (function overriding)
-- int& Array::operator[](int index); -> int& SafeArray::operator[](int index);
+- int& Array::operator[ ](int index); -> int& SafeArray::operator[ ](int index);
 - vs. 함수중복 (function overloading)
 
 ### 순수 가상 함수 (pure virtual function)
@@ -776,7 +776,7 @@ sudo chmod 666 /dev/ttyUSB0
 - 추상클래스 타입의 객체는 생성 불가
 - 추상클래스 타입의 포인터, 레퍼런스는 가능
 
-### #include <typeinfo> 상속에서 중요!!!
+### #include &lt;typeinfo&gt; 상속에서 중요!!!
 - void printShape(const Shape *ps)
 - {
 >> if (typeid(*ps) == typeid(Rectangle))     
