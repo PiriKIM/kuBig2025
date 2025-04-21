@@ -60,7 +60,8 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "complex": "cpp",
-        "cstring": "cpp"
+        "cstring": "cpp",
+        "cassert": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
 }
