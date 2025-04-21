@@ -801,3 +801,35 @@ sudo chmod 666 /dev/ttyUSB0
 - Array 클래스 이름은 Array&lt;T&gt;로 변경 (단, 클래스 이름, 생성자, 소멸자는 그대로 사용)
 - 상속받은 부모클래스가 템플릿 코드면 부모클래스 이름과 생성자에는 &lt;T&gt;를 붙여야야 함
 
+
+
+---
+2025-04-21
+---
+### 형변환 (type casting)
+- in C -> (type)expr;
+- in C++ -> 컴파일 시 타입호환을 엄격하게 check하는 방향으로!
+- static_cast&lt;type&gt;(expr) : 기본! 컴파일 시간에 타입이 호환이 되는지 체크 후 변환
+- reinterpret_cast&lt;type&gt;(expr) : 강제 형변환
+- dynamic_cast&lt;type&gt;(expr) : 부모클래스 타입의 pointer, reference를 본래 자식클래스 타입의 pointer, reference로 전달할 때
+- const_cast&lt;type&gt;(expr) : pointer, refence 상수성을 없앨 때
+
+### inline 함수
+- 함수를 호출하는 대신 함수의 본문을 복사해서 붙여넣는 방식
+- inline int square(int x) { return x * x; }
+- 컴파일할 때 실제로 square(5) 이런 호출 코드를 5 * 5로 바꿔서 컴파일
+- 속도 향상: 함수 호출의 오버헤드를 줄이기 위해 사용
+- 짧은 함수에 적합: 함수 본문이 짧고 자주 호출될 때 성능에 도움
+- 매크로 대체: 전통적인 매크로 대신 안전한 inline 함수 사용이 추천
+- 무조건 인라인된다는 보장은 없음!
+- inline은 컴파일러에게 요청하는 것이고, 컴파일러가 무시할 수도 있음
+- 함수 내용이 너무 크면 오히려 속도 저하 (코드 사이즈가 커짐)
+- 헤더 파일에 정의되어야 여러 파일에서 사용 가능
+
+### 참조계수 (reference count)
+- 메모리 관리에서 객체가 참조되고 있는 횟수를 추적하는 개념
+- 객체가 생성되면 참조 계수는 1부터 시작, 0이 되면 삭제
+- 누군가 객체를 참조하면 +1, 참조가 해제되면 -1
+
+
+
