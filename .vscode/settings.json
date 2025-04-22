@@ -61,7 +61,9 @@
         "typeinfo": "cpp",
         "complex": "cpp",
         "cstring": "cpp",
-        "cassert": "cpp"
+        "cassert": "cpp",
+        "ctime": "cpp",
+        "list": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
 }
