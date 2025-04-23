@@ -836,10 +836,41 @@ sudo chmod 666 /dev/ttyUSB0
 ---
 2025-04-22
 ---
-### map
-- 이진트리 구조
-- 키, 값으로 이루어짐
-- for문으로 전체 출력시 순서는 보장되지않음
+### STL
+- 순차 컨테이너
+-> vector, array, deque, list
+- 연관 컨테이너
+-> map : key:value 구조, [index] 대신 [key] 사용, 이진트리 구조
+-> set : 집합, 중복X, 자동정렬
+- 어댑터 컨데이터
+-> stack, queue
+- ordered_map
+-> map과 비슷하지만 내부적으로 hashtable을 가짐, 접근에 특화
+
+### Modern C++
+- auto
+- 범위 for문
+- iter class -> 전위, 후위, 증감 정의, 역참조 있어야함
+- 멤버 함수 begin(), end()
+- 람다함수 [캡쳐](인수1, 인수2)->리턴타입{실행코드};
+
+
+
+---
+2025-04-23
+---
+### sort
+- Sorted by Average Score Descending Order
+- sort(students.begin(), students.end(), [ ](const Student &a, const Student &b) { return a.averageScore() > b.averageScore(); });
+- Sorted by Average Score Ascending Order
+- sort(students.begin(), students.end(), [ ](const Student &a, const Student &b) { return a.averageScore() < b.averageScore(); });
+- 람다 반환값이 true면 그대로 유지, false면 위치를 바꿈 (swap)
+
+### stable_sort와의 차이
+- 인자 구성은 동일
+- sort는 퀵소트 기반으로 비교적 빠름. 하지만 동일한 값의 순서가 보장되지 않음.
+- stable_sort는 머지소트 기반으로 느릴 수 있음. 동일한 값의 순서가 보장됨.
+- 비교 함수는 동일하게 사용 가능
 
 
 
