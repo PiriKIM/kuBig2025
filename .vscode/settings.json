@@ -63,7 +63,8 @@
         "cstring": "cpp",
         "cassert": "cpp",
         "ctime": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "chrono": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled",
 }
