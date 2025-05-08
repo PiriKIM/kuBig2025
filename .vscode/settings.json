@@ -64,7 +64,8 @@
         "cassert": "cpp",
         "ctime": "cpp",
         "list": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "python.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
 }
