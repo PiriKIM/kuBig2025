@@ -874,4 +874,32 @@ sudo chmod 666 /dev/ttyUSB0
 
 
 
+---
+TCP/IP 통신 수업
+---
+### shm (shared memory)
+- sys/mman.h -> int shm_fd = shm_open("/myshm", O_CREAT | O_RDWR, 0666);
+> O_CREAT: 없으면 새로 생성 (/dev/shm/myshm)     
+> O_RDONLY, O_WRONLY, O_RDWR     
+> 0666: 파일 권한 - 모든 사용자 읽기/쓰기 허용
+- unistd.h -> ftruncate(shm_fd, 4096);  // 4KB 크기 지정
+> shm_open으로 생성된 공유 메모리는 기본적으로 크기가 0이므로, 반드시 ftruncate로 사이즈를 지정해 줘야 함
+- char *shm = mmap(0, 4096, PROT_WRITE | PROT_READ, MAP_SHARED, shm_fd, 0);
+> 생성한 공유 메모리 객체를 프로세스 주소 공간에 매핑     
+> PROT_WRITE | PROT_READ: 읽기/쓰기 허용      
+> MAP_SHARED: 다른 프로세스들과 이 메모리를 공유하겠다는 의미     
+> 반환값 shm: 공유 메모리 시작 주소
+- munmap(shm, 4096);
+> 공유 메모리를 주소 공간에서 언매핑
+- close(shm_fd);
+- shm_unlink("/myshm");
+> 공유 메모리 객체를 제거
 
+
+
+
+
+### MQTT
+- sudo apt install mosquitto mosquitto-clients mosquitto-dev
+- mosquitto_sub -t "test/topic" -h localhost
+- mosquitto_pub -t "test/topic" -m "hello" -h localhost
