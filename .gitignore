@@ -2,5 +2,6 @@ build/
 __pycache__/
 myenv/
 opencv/data/
+orange3/data/
 *.caffemodel
 *.pth

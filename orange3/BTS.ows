@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="" description="">
+	<nodes>
+		<node id="0" name="Corpus" qualified_name="orangecontrib.text.widgets.owcorpus.OWCorpus" project_name="Orange3-Text" version="" title="Corpus" position="(107.0, 259.0)" />
+		<node id="1" name="Corpus Viewer" qualified_name="orangecontrib.text.widgets.owcorpusviewer.OWCorpusViewer" project_name="Orange3-Text" version="" title="Corpus Viewer" position="(298.0, 101.0)" />
+		<node id="2" name="Preprocess Text" qualified_name="orangecontrib.text.widgets.owpreprocess.OWPreprocess" project_name="Orange3-Text" version="" title="Preprocess Text" position="(308.0, 272.0)" />
+		<node id="3" name="Word Cloud" qualified_name="orangecontrib.text.widgets.owwordcloud.OWWordCloud" project_name="Orange3-Text" version="" title="Word Cloud" position="(458.0, 272.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Corpus" sink_channel="Corpus" enabled="true" source_channel_id="corpus" sink_channel_id="corpus" />
+		<link id="1" source_node_id="0" sink_node_id="2" source_channel="Corpus" sink_channel="Corpus" enabled="true" source_channel_id="corpus" sink_channel_id="corpus" />
+		<link id="2" source_node_id="2" sink_node_id="3" source_channel="Corpus" sink_channel="Corpus" enabled="true" source_channel_id="corpus" sink_channel_id="corpus" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="pickle">gASVHgMAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjAxyZWNlbnRfZmlsZXOUXZQojC8v
+aG9tZS9waXJpL2t1QmlnMjAyNS9vcmFuZ2UzL2RhdGEvbHlyaWNzLXY1LmNzdpSMEWJvb2stZXhj
+ZXJwdHMudGFilIwYZ3JpbW0tdGFsZXMtc2VsZWN0ZWQudGFilIwYZWxlY3Rpb24tdHdlZXRzLTIw
+MTYudGFilIwXZnJpZW5kcy10cmFuc2NyaXB0cy50YWKUjAxhbmRlcnNlbi50YWKUZYwTc2F2ZWRX
+aWRnZXRHZW9tZXRyeZRDQgHZ0MsAAwAAAAAC2gAAAP0AAASfAAADPgAAAt0AAAEbAAAEnAAAAzsA
+AAAAAAAAAAeAAAAC3QAAARsAAAScAAADO5SMC19fdmVyc2lvbl9flEsCjBBjb250ZXh0X3NldHRp
+bmdzlF2UjBVvcmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOU
+fZQojAhsYW5ndWFnZZSMAmVulEr+////hpSMDnRpdGxlX3ZhcmlhYmxllIwLdHJhY2tfdGl0bGWU
+S2eGlIwKdXNlZF9hdHRyc5RdlChoGktnhpSMBmx5cmljc5RLZ4aUjA9lbmdfdHJhY2tfdGl0bGWU
+S2eGlIwPa29yX3RyYWNrX3RpdGxllEtnhpRlSv3///+GlGgMSwJ1jAphdHRyaWJ1dGVzlH2UKIwC
+aWSUSwKMC2FsYnVtX3RpdGxllEsBjA9lbmdfYWxidW1fdGl0bGWUSwGMCGFsYnVtX3JklEsEjAlh
+bGJ1bV9zZXGUSwKMDGhpZGRlbl90cmFja5RLAYwFcmVtaXiUSwGMCGZlYXR1cmVklEsBjAxwZXJm
+b3JtZWRfYnmUSwGMCnJlcGFja2FnZWSUSwGMBGxhbmeUSwGMDGhhc19mdWxsX3ZlcpRLAXWMBW1l
+dGFzlH2UKGgaSwNoI0sDaCFLA2gfSwN1jA5kb2N1bWVudHNfaGFzaJSKEVAwlQEkGCFgxwdsS0Jh
+PsUAaBZOdWJhdS4=
+</properties>
+		<properties node_id="1" format="pickle">gASVLgMAAAAAAAB9lCiMCmF1dG9jb21taXSUiIwSY29udHJvbEFyZWFWaXNpYmxllIiME3NhdmVk
+V2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAAagAAABnAAAF0gAAAxEAAAGrAAAAhQAABc8AAAMO
+AAAAAAAAAAAHgAAAAasAAACFAAAFzwAAAw6UjBJzZWxlY3RlZF9kb2N1bWVudHOUj5QoSwGQjAtz
+aG93X3Rva2Vuc5SJjAtfX3ZlcnNpb25fX5RLAowQY29udGV4dF9zZXR0aW5nc5RdlIwVb3Jhbmdl
+d2lkZ2V0LnNldHRpbmdzlIwHQ29udGV4dJSTlCmBlH2UKIwGdmFsdWVzlH2UKIwQZGlzcGxheV9m
+ZWF0dXJlc5RdlCiMC3RyYWNrX3RpdGxllEtnhpSMD2tvcl90cmFja190aXRsZZRLZ4aUjA9lbmdf
+dHJhY2tfdGl0bGWUS2eGlIwGbHlyaWNzlEtnhpSMAmlklEtmhpSMC2FsYnVtX3RpdGxllEtlhpSM
+D2VuZ19hbGJ1bV90aXRsZZRLZYaUjAhhbGJ1bV9yZJRLaIaUjAlhbGJ1bV9zZXGUS2aGlIwMaGlk
+ZGVuX3RyYWNrlEtlhpSMBXJlbWl4lEtlhpSMCGZlYXR1cmVklEtlhpSMDHBlcmZvcm1lZF9ieZRL
+ZYaUjApyZXBhY2thZ2VklEtlhpSMBGxhbmeUS2WGlIwMaGFzX2Z1bGxfdmVylEtlhpRlSv3///+G
+lIwNcmVnZXhwX2ZpbHRlcpSMAJRK/v///4aUjA9zZWFyY2hfZmVhdHVyZXOUXZQoaBRLZ4aUaBZL
+Z4aUaBhLZ4aUaBpLZ4aUaBxLZoaUaB5LZYaUaCBLZYaUaCJLaIaUaCRLZoaUaCZLZYaUaChLZYaU
+aCpLZYaUaCxLZYaUaC5LZYaUaDBLZYaUaDJLZYaUZUr9////hpRoCEsCdYwKYXR0cmlidXRlc5R9
+lChoHEsCaB5LAWggSwFoIksEaCRLAmgmSwFoKEsBaCpLAWgsSwFoLksBaDBLAWgySwF1jAVtZXRh
+c5R9lChoFEsDaBZLA2gYSwNoGksDdXViYXUu
+</properties>
+		<properties node_id="2" format="literal">{'autocommit': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\x13\x00\x00\x00\xb2\x00\x00\x05f\x00\x00\x02\xc6\x00\x00\x02\x16\x00\x00\x00\xd0\x00\x00\x05c\x00\x00\x02\xc3\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x02\x16\x00\x00\x00\xd0\x00\x00\x05c\x00\x00\x02\xc3', 'storedsettings': {'name': '', 'preprocessors': [('preprocess.transform', {}), ('preprocess.tokenize', {}), ('preprocess.filter', {'language': 'en'})]}, '__version__': 4}</properties>
+		<properties node_id="3" format="pickle">gASVtwAAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZlZFdpZGdldEdlb21ldHJ5
+lENCAdnQywADAAAAAAH4AAAAsgAABYEAAALGAAAB+wAAANAAAAV+AAACwwAAAAAAAAAAB4AAAAH7
+AAAA0AAABX4AAALDlIwOc2VsZWN0ZWRfd29yZHOUj5SMC3dvcmRzX2NvbG9ylIiMCndvcmRzX3Rp
+bHSUSwCMC19fdmVyc2lvbl9flEsBdS4=
+</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>
